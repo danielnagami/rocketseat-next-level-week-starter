@@ -1,33 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado da pesquisa</title>
+{% extends "layout.html" %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+{% set pageId = "page-search-results" %}
+
+{% block title %}
+    <title>Resultado da pesquisa</title>
+{% endblock title %}
+
+{% block styles %}
 
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/search-results.css">
-    <link rel="stylesheet" href="/styles/resposive.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="/styles/modal.css">
 
-    <div id="page-search-results">
+{% endblock styles %}
 
+{# id="page-search-results" #}
 
-            <header>
+{% block content %}
 
-                <img src="/assets/logo.svg" alt="Logomarca">
+    {% include "partials/page-header.html" %}
 
-                <a href="/">
-                    <span></span>
-                    Voltar para home
-                </a>
-
-            </header>
-
-            <main>
+    <main>
 
                 <h4>
                     <strong>2 pontos</strong> encontrados
@@ -59,6 +53,12 @@
             </main>
 
     </div>
+{% endblock content %}
 
-</body>
-</html>
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock scripts %}
